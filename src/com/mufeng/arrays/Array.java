@@ -105,6 +105,21 @@ public class Array<E> {
     }
 
     /**
+     * 获取第一个元素
+     * @return
+     */
+    public E getLast(){
+        return get(size - 1);
+    }
+
+    /**
+     * 获取最后一个元素
+     * @return
+     */
+    public E getFrist(){
+        return get(0);
+    }
+    /**
      * 设置索引index上的元素
      * @param index
      * @param e
