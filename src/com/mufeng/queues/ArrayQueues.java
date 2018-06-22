@@ -32,7 +32,7 @@ public class ArrayQueues<E> implements Queues<E> {
      * @return
      */
     @Override
-    public int getsize() {
+    public int getSize() {
         return array.getSize();
     }
 

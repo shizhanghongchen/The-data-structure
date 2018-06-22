@@ -1,19 +1,23 @@
 package com.mufeng;
 
-import com.mufeng.queues.ArrayQueues;
+import com.mufeng.linkedList.LinkedList;
 
 public class Main {
 
     public static void main(String[] args) {
-        ArrayQueues<Integer> queues = new ArrayQueues<>();
-
-        for (int i = 0; i < 10; i++){
-            queues.enqueues(i);
-            System.out.println(queues);
-            if (i % 3 == 2){
-                queues.dequeues();
-                System.out.println(queues);
-            }
+        LinkedList<Integer> linkedList = new LinkedList<>();
+        for (int i = 0; i < 5; i++) {
+            linkedList.addFrist(i);
+            System.out.println(linkedList);
         }
+        linkedList.add(666, 2);
+        System.out.println(linkedList);
+
+        linkedList.remove(2);
+        System.out.println(linkedList);
+        linkedList.removeFrist();
+        System.out.println(linkedList);
+        linkedList.removeLast();
+        System.out.println(linkedList);
     }
 }

@@ -9,7 +9,7 @@ public interface Queues<E> {
      * 获取队列中元素的个数
      * @return
      */
-    int getsize();
+    int getSize();
 
     /**
      * 判断队列中是否是空的
