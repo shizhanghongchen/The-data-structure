@@ -50,7 +50,7 @@ public class BST<E extends Comparable<E>> {
      * @param e
      * @return
      */
-    public Node add(Node node, E e){
+    private Node add(Node node, E e){
         // 递归的终止条件
         if (node == null){
             size++;
@@ -214,7 +214,7 @@ public class BST<E extends Comparable<E>> {
      * 从二分搜索树中删除最小值所在节点, 返回最小值
      * @return
      */
-    public E removemin(){
+    private E removemin(){
         E ret = minimum();
         root = removeMin(root);
         return ret;
@@ -237,6 +237,7 @@ public class BST<E extends Comparable<E>> {
         node.left = removeMin(node.left);
         return node;
     }
+
 
     /**
      * 从二分搜索树中删除最大值所在节点，返回最大值
