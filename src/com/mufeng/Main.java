@@ -1,46 +1,20 @@
 package com.mufeng;
 
-import com.mufeng.set.BSTSet;
-import com.mufeng.set.FileOperation;
-import com.mufeng.set.LinkedListSet;
-import com.mufeng.set.Set;
-
-import java.util.ArrayList;
+import com.mufeng.segmentTree.SegmentTree;
 
 public class Main {
 
-    private static double testSet(Set<String> set, String filename){
-
-        long startTime = System.nanoTime();
-
-        System.out.println(filename);
-        ArrayList<String> words = new ArrayList<>();
-        if(FileOperation.readFile(filename, words)) {
-            System.out.println("Total words: " + words.size());
-
-            for (String word : words)
-                set.add(word);
-            System.out.println("Total different words: " + set.getSize());
-        }
-        long endTime = System.nanoTime();
-
-        return (endTime - startTime) / 1000000000.0;
-    }
-
     public static void main(String[] args) {
 
-        String filename = "pride-and-prejudice.txt";
+        Integer[] nums = {-2, 0, 3, -5, 2, -1};
 
-        BSTSet<String> bstSet = new BSTSet<>();
-        double time1 = testSet(bstSet, filename);
-        System.out.println("BST Set: " + time1 + " s");
+        SegmentTree<Integer> segTree = new SegmentTree<>(nums,
+                (a, b) -> a + b);
+        System.out.println(segTree);
 
-        System.out.println();
-
-        LinkedListSet<String> linkedListSet = new LinkedListSet<>();
-        double time2 = testSet(linkedListSet, filename);
-        System.out.println("Linked List Set: " + time2 + " s");
-
+        System.out.println(segTree.query(0, 2));
+        System.out.println(segTree.query(2, 5));
+        System.out.println(segTree.query(0, 5));
     }
 }
 
